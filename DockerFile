@@ -1,10 +1,26 @@
-FROM node:10
-RUN mkdir -p /home/node/app
-WORKDIR /home/node/app
-COPY package.json .
+# Dockerhub üzerinden resmi Node 8 image'ını temel alarak bir image oluşturuldu
+FROM node:8
 
+# Uygulamamızın bulunacağı klasörü oluşturuldu
+RUN mkdir -p /var/www/app
+
+# Komutlarımızın çalıştırılacağı dizini seçildi
+WORKDIR /var/www/app
+
+# package.json dosyamızı çalışma dizinine kopyalandı
+COPY package.json /var/www/app
+
+# Bağımlılıkları kuruldu
 RUN npm install
-COPY ./ .
 
+# nodemon'u kuruldu
+RUN npm install -g nodemon
+
+# Tüm proje dosyalarını docker image'ına kopyalandı
+COPY . /var/www/app
+
+# Uygulamanın çalışacağı port
 EXPOSE 3000
-CMD ["npm","start"]
+
+# Projeyi ayağa kaldıracak komutu çalıştırıldı
+CMD ["npm", "start"]
