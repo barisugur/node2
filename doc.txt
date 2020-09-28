@@ -1,0 +1,11 @@
+Döküman
+
+Problem: İsim, Soyisim, Yaş MangoDB'ye kayıt eden ve silen NodeJS servisleri yazılmalı. Bu servis Docker üzerinde çalışmalı.
+
+Yapılanlar: 
+
+NodeJS ile Kodlama yaparken daha düzenli olması açısından Model, Database, Router gibi klasörler kullandım.
+Model klasörümün içinde User'a ait olan entityim bulunmaktadır. Burada User'a ait olan İsim,Soyisim,Yaş gibi özelliklerin nasıl olması gerektiğini vurgulayacak şekilde tasarlamaya özen gösterdim.
+Database klasörümde ise Connection sağladığım kodu yazdım. Burada bağımlılığı düşürüp okunabilirliği arttırmayı hedefledim.
+Router klasörümde ise rotalarımı belirledim. Hangi durumda nasıl davranılmasını istiyorsam o şekilde tasarlamaya çalıştım. Try-Catch yapısını kullanmaya özen gösterdim. Burada Ekleme ve Silme işlemlerini gerçekleştirdim. Konu ilgimi çektiği için insiyatif alarak güncelleme de ekledim.
+restfull.http kısmında ise postman kullanmak istemediğim için REST Client eklentisini kullanarak Post, Delete ve Patch işlemlerini burada gerçekleştirdim. 'Send Request' ile talep gönderip gerekli işlemlerin yapılması için tetikliyorum.

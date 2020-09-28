@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { Console } = require('console');
 const User = require('../Model/UserModel');
 router.get('/',async (req,res)=>{
     const allUsers = await User.find({});

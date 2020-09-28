@@ -4,8 +4,6 @@
 
 GET {{BASE_URL}}/users
 ###
-GET {{BASE_URL}}/users/55
-###
 POST {{BASE_URL}}/users
 Content-Type: application/json
 
@@ -23,5 +21,6 @@ Content-Type: application/json
     "yas": 24
 }
 ###
-DELETE {{BASE_URL}}/users/5f70a7bb2fd58d426cc6f9c2
+DELETE {{BASE_URL}}/users/5f717b063094b630183c5b28
 Content-Type: application/json
+
