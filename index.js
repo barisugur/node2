@@ -1,15 +1,16 @@
 const express = require('express');
+const User = require('./Model/UserModel');
 require('./Database/databaseConnection');
 const app = express();
 //Routes
-const userRouter = require('./router/userRouter');
+const userRouter = require('./Router/userRouter');
 
 app.use(express.json());
 
-app.get('/', (req,res)=> {
-    res.json({'mesaj':'Hoşgeldiniz'});
-    //Ekranda yazacak view
-})
+app.get('/',async (req,res)=>{
+    const allUsers = await User.find({});
+    res.json(allUsers);
+});
 
 app.post('/', (req,res) =>
  {res.status(200).json(req.body); 

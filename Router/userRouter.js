@@ -4,11 +4,6 @@ router.get('/',async (req,res)=>{
     const allUsers = await User.find({});
     res.json(allUsers);
 });
-
-// router.get('/:id',async (req,res)=>{
-//     const allUsers = await User.find({});
-//     res.json(allUsers);
-//     });
     
 router.post('/',async (req,res)=>{
         try{
@@ -23,13 +18,13 @@ router.post('/',async (req,res)=>{
 router.patch('/:id',async (req,res)=>{
 
 try{
-    const sonuc= await User.findByIdAndUpdate({_id: req.params.id},req.body, {new:true, runValidators: true})
+    const sonuc= await User.findByIdAndUpdate({_id: req.params.id},req.body, {new:true, runValidators: true});
     if(sonuc){
         return res.json(sonuc);
     } else{
         return res.status(404).json({
             mesaj:"Kullanıcı bulunamadı."
-        })
+        });
     }
 }catch(err){
     console.log("Kullanıcı güncelleme hatası yaşandı. Hata: "+ err);
@@ -44,7 +39,7 @@ router.delete('/:id',async (req,res)=>{
                 if(sonuc){
                    return res.json({
                         mesaj: "Kullanıcı silindi."
-                    })
+                    });
                 }else{
                     return res.status(404).json({
                         mesaj: "Kullanıcı bulunamadı veya silinemedi."

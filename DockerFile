@@ -13,14 +13,11 @@ COPY package.json /var/www/app
 # Bağımlılıkları kuruldu
 RUN npm install
 
-# nodemon'u kuruldu
-RUN npm install -g nodemon
-
 # Tüm proje dosyalarını docker image'ına kopyalandı
 COPY . /var/www/app
 
 # Uygulamanın çalışacağı port
 EXPOSE 3000
 
-# Projeyi ayağa kaldıracak komutu çalıştırıldı
-CMD ["npm", "start"]
+# Projeyi ayağa kaldıracak komut çalıştırıldı
+CMD ["npm", "run", "prod"]
