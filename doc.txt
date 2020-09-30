@@ -10,7 +10,9 @@ NodeJS ile Kodlama yaparken daha düzenli olması açısından Model, Database, 
 Model klasörümün içinde User'a ait olan Entity'im bulunmaktadır. Burada User'a ait olan İsim, Soyisim, Yaş gibi özelliklerin nasıl olması gerektiğini vurgulayacak şekilde tasarlamaya özen gösterdim.
 Database klasörümde ise Connection sağladığım kodu yazdım. Burada bağımlılığı düşürüp okunabilirliği arttırmayı hedefledim.
 Router klasörümde ise rotalarımı belirledim. Hangi requestte nasıl davranılmasını istiyorsam o şekilde tasarlamaya çalıştım. Try-Catch yapısını kullanmaya özen gösterdim. Burada Ekleme ve Silme işlemlerini gerçekleştirdim. Konu ilgimi çektiği için insiyatif alarak güncelleme ve listeleme de ekledim.
-restfull.http kısmında ise postman kullanmak istemediğim için REST Client eklentisini kullanarak Post, Delete ve Patch işlemlerini burada gerçekleştirdim. 'Send Request' ile talep gönderip gerekli işlemlerin yapılması için tetikliyorum.
+restfull.http kısmında ise postman kullanmak istemediğim için REST Client eklentisini kullanarak Get, Post, Delete, Patch işlemlerini burada gerçekleştirdim. 'Send Request' ile talep gönderip gerekli işlemlerin yapılması için tetikliyorum.
+Tüm bu işlemler sonucunda 'Dockerfile' dosyasında dockerize işlemi gerçekleştirildi. Mongodb ile birlikte çalışabilmesi için docker-compose yapısı kullanıldı.
+Docker Compose yapısı ile proje başarılı bir şekilde ayağa kaldırıldı.
 
 
 Eklentiler 
